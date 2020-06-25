@@ -1,4 +1,4 @@
-package user;
+package member;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,20 +9,20 @@ import java.util.Scanner;
 
 
 
-// íšŒì› ë¡œê·¸ì¸
+// ?šŒ?› ë¡œê·¸?¸
 public class MemberUser {
 
-	int num; 		//íšŒì› ë²ˆí˜¸
-	String id; 		//íšŒì› ì•„ì´ë””
-	String pw; 		//íšŒì› ë¹„ë°€ë²ˆí˜¸
-	String name; 	//íšŒì› ì´ë¦„
-	int remainTime;	//íšŒì› ë‚¨ì€ì‹œê°„
+	int num; 		//?šŒ?› ë²ˆí˜¸
+	String id; 		//?šŒ?› ?•„?´?””
+	String pw; 		//?šŒ?› ë¹„ë?ë²ˆí˜¸
+	String name; 	//?šŒ?› ?´ë¦?
+	int remainTime;	//?šŒ?› ?‚¨???‹œê°?
 	boolean loginFlag = false;
 	
 	public void login(MemberUser memberuser) {
 		
 		// Database connection
-		// ë°ì´í„°ë² ì´ìŠ¤ ì—°ë™
+		// ?°?´?„°ë² ì´?Š¤ ?—°?™
 		Connection conn = null;
 		Statement stat = null;
 		ResultSet rs = null;
@@ -30,7 +30,7 @@ public class MemberUser {
 		
 		Scanner scan = new Scanner(System.in);
 		
-		// íšŒì› ê³„ì • ë°ì´í„°ë¥¼ ë„£ì–´ì¤„ ë³€ìˆ˜
+		// ?šŒ?› ê³„ì • ?°?´?„°ë¥? ?„£?–´ì¤? ë³??ˆ˜
 		HashMap<String, ArrayList<String>> memberInfo = new HashMap<String, ArrayList<String>>();
 		
 		try {
@@ -41,7 +41,7 @@ public class MemberUser {
 			String sql = String.format("select * from tblMember");
 			rs = stat.executeQuery(sql);
 			
-			//ë°ì´í„° ë°›ê¸°
+			//?°?´?„° ë°›ê¸°
 			while (rs.next()){
 				
 				ArrayList<String> temp = new ArrayList<String>();
@@ -54,10 +54,10 @@ public class MemberUser {
 								
 			}//while
 			
-			// ì•„ì´ë”” ë¹„ë°€ë²ˆí˜¸ ì…ë ¥
-			System.out.print("\t\t\tâ–· ID:");
+			// ?•„?´?”” ë¹„ë?ë²ˆí˜¸ ?…? ¥
+			System.out.print("\t\t\t?–· ID:");
 			String inputId = scan.nextLine();
-			System.out.print("\t\t\tâ–· PW:");
+			System.out.print("\t\t\t?–· PW:");
 			String inputPw = scan.nextLine();
 			
 			// loginInfo search
@@ -96,7 +96,7 @@ public class MemberUser {
 		
 	}//login
 	
-	//íšŒì›ë²ˆí˜¸
+	//?šŒ?›ë²ˆí˜¸
 	public int getNum() {
 		return num;
 	}
@@ -105,7 +105,7 @@ public class MemberUser {
 		this.num = num;
 	}
 
-//	//íšŒì› ì•„ì´ë””
+//	//?šŒ?› ?•„?´?””
 //	public String getId() {
 //		return id;
 //	}
@@ -114,7 +114,7 @@ public class MemberUser {
 //		this.id = id;
 //	}
 //	
-//	//íšŒì› ë¹„ë°€ë²ˆí˜¸
+//	//?šŒ?› ë¹„ë?ë²ˆí˜¸
 //	public String getPw() {
 //		return pw;
 //	}
