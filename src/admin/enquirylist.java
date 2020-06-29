@@ -123,16 +123,16 @@ public void printlist() {
 				
 			}
 			
-//			while (rs2.next()) {
-//				
-//				System.out.print("\t\t\t");
-//				System.out.printf("   %d", rs.getInt("num"));
-//				System.out.print("\t");
-//				System.out.printf("   %d", rs.getInt("pcNum"));
-//				System.out.print("\t\t");
-//				System.out.print(rs.getString("content"));
-//				System.out.println();
-//			}
+			while (rs2.next()) {
+				
+				System.out.print("\t\t\t");
+				System.out.printf("   %d", rs.getInt("num"));
+				System.out.print("\t");
+				System.out.printf("   %d", rs.getInt("pcNum"));
+				System.out.print("\t\t");
+				System.out.print(rs.getString("content"));
+				System.out.println();
+			}
 
 			rs2.close();
 			rs.close();
