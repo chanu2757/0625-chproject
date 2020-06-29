@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import oracle.jdbc.OracleTypes;
 
-// È¸¿ø °¡ÀÔ½Ã ÀÔ·ÂÇÑ Á¤º¸¸¦ ÀúÀåÇÏ´Â »ı¼ºÀÚ
+// íšŒì›ê°€ì…
 public class user {
 
 public static void signup(){
@@ -16,24 +16,22 @@ public static void signup(){
 	DBUtil util = new DBUtil();
 	Scanner sc = new Scanner(System.in);
 	try {
-		conn = util.open("211.63.89.61", "chproject", "java1234");
+		conn = util.open("localhost", "chproject", "java1234");
 		String sql = "{ call procAddmember(?,?,?,?,?,?,?)}";
 		stat = conn.prepareCall(sql);
+		System.out.println("\t\t\tã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“");
+		System.out.println("\t\t\t			íšŒì›ê°€ì…");
+		System.out.println("\t\t\tã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“ã€“");
 		
-		System.out.println("\t\t\t¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë");
-		System.out.println("\t\t\t   È¸¿ø °¡ÀÔ");
-		System.out.println("\t\t\t¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë¡ë");
-		System.out.println("\t\t\t '*'´Â ¹İµå½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä!");
-		
-		System.out.print("\t\t\t *¾ÆÀÌµğ:");
+		System.out.print("\t\t\t â–¶ID:");
 		String id = sc.nextLine();
-		System.out.print("\t\t\t *ºñ¹Ğ¹øÈ£:");
+		System.out.print("\t\t\t â–¶ë¹„ë°€ë²ˆí˜¸:");
 		String pw = sc.nextLine();
-		System.out.print("\t\t\t *ÀÌ¸§:");
+		System.out.print("\t\t\t â–¶ì´ë¦„:");
 		String name = sc.nextLine();
-		System.out.print("\t\t\t *ÁÖ¹Îµî·Ï¹øÈ£:");
+		System.out.print("\t\t\t â–¶ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸:");
 		String ssn = sc.nextLine();
-		System.out.print("\t\t\t *¿¬¶ôÃ³:");
+		System.out.print("\t\t\t â–¶ì—°ë½ì²˜:");
 		String tel = sc.nextLine();
 		System.out.print("\t\t\t E-mail:");
 		String email = sc.nextLine();
@@ -52,13 +50,13 @@ public static void signup(){
 		int result= stat.getInt(7);
 		
 		if(result ==1) {
-			System.out.println("È¸¿ø°¡ÀÔ ¼º°ø!");
+			System.out.println("íšŒì›ê°€ì… ì™„ë£Œ!");
 		}
 		stat.close();
 		conn.close();
 
 	} catch (Exception e) {
-		System.out.println("È¸¿ø°¡ÀÔ ½ÇÆĞ!");
+		System.out.println("íšŒì›ê°€ì… ì‹¤íŒ¨!");
 	}
 
 }
